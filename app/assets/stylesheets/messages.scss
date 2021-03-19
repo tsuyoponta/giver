@@ -1,0 +1,162 @@
+$main_color: yellowgreen;
+$sub_color: #E4FF8D;
+
+.wrapper {
+  display: flex;
+}
+
+.side-bar {
+  width: 250px;
+  height: 100vh;
+  background-color: $main_color;
+}
+
+.side-bar-header {
+  height: 80px;
+  padding: 0 20px;
+  background-color: $main_color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-room {
+  a {
+    font-size: 15px;
+    padding: 14px;
+    border: none;
+    text-decoration: none;
+    color: #003399;
+    border-radius: 10px;
+    background-color: $sub_color;
+    transition-property: opacity;
+    transition-duration: .5s;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.rooms {
+  height: calc(100vh - 80px);
+  background-color: $sub_color;
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.room {
+  padding: 20px 0 40px;
+}
+
+.room-name {
+  a {
+    text-decoration: none;
+    color: #003399;
+  }
+}
+  
+.chat {
+  width: calc(100vw - 250px);
+  height: 100vh;
+  background-color: gray;
+}
+
+.chat-header {
+  height: 80px;
+  background-color: $main_color;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.room-exit {
+  font-size: 18x;
+  padding: 10px;
+  color: black;
+  border: none;
+  background-color: $sub_color;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.right-header {
+  font-size: 20px;
+  display: flex;
+  list-style: none;
+}
+
+.messages {
+  height: calc(100vh - 80px - 80px);
+  background-color: white;
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+
+.message {
+  margin-top: 10px;
+}
+
+.upper-message {
+  display: flex;
+}
+
+.message-user {
+  color: black;
+  font-size: 14px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: black;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.form {
+  height: 80px;
+  background-color: $main_color;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  width: 100%;
+  background-color: white;
+}
+
+.form-message {
+  width: 100%;
+  padding-left: 10px;
+  height: 40px;
+  border: none;
+}
+
+.form-submit {
+  width: 60px;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+  margin-left: 10px;
+  background-color: $sub_color;
+  border: none;
+}
