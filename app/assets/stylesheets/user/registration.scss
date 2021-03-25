@@ -1,0 +1,138 @@
+// ログイン画面にも適用しています
+
+$main_color: yellowgreen;
+$sub_color: #E4FF8D;
+
+.form-main-background {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  background-image: linear-gradient(180deg, $main_color 70%, $sub_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-main {
+  background-color: white;
+  width: 40%;
+  padding: 30px;
+  text-align: center;
+}
+
+.form-header-text {
+  font-family: 'Maven Pro';
+  font-size: 24px;
+  color: black;
+  border-bottom: solid 1px $main_color;
+  padding: 0 0 0.8em 0;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-text-wrap {
+  margin: 0 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-text {
+  font-weight: bold;
+}
+
+.input-default {
+  width: 100%;
+  background: transparent;
+  border-bottom: solid 1px $main_color;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 1rem;
+  padding: 0.5em 0.4em;
+  transition: all 0.4s;
+  color: black;
+  margin: 0.7rem 0;
+  &:focus {
+    background: $sub_color;
+    transform: scale3d(1.02,1.02,1.02);
+  }
+}
+
+.indispensable {
+  font-size: 12px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.submit-btn-green {
+  background: transparent;
+  width: 50%;
+  margin-top: 1em;
+  font-size: 1em;
+  border: solid 1px $main_color;
+  border-radius: 10px;
+  padding: 1em 0;
+  color: black;
+  transition: all 0.6s;
+  &:hover {
+    cursor:pointer;
+    background: $sub_color;
+  }
+}
+
+.divider {
+  margin-top: 2em;
+  font-size: 0.8em;
+  position: relative;
+  z-index: 1;
+  &:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+  }
+  span {
+    background: white;
+    padding: 0 15px;
+  }
+}
+
+.divider-text {
+  color: grey;
+}
+
+.login-link {
+  margin-top: 1em;
+  a {
+    text-decoration: none;
+  }
+}
+
+.login-btn {
+  padding: 10px;
+  border: $main_color;
+}
+
+@media (max-width: 550px) {
+  form {
+  width: 90%;
+  margin-left: 3%;
+  padding-top: 5%;
+}
+  input {
+    font-size: 1em;
+  }
+}
