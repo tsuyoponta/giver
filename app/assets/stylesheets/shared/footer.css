@@ -1,7 +1,7 @@
-.second-page-header {
+.footer {
   width: 100vw;
-  height: 80px;
-  background-color: white;
+  height: 100px;
+  background-color: #E4FF8D;
   display: flex;
   justify-content: center;
   align-items: center

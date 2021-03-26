@@ -1,37 +1,43 @@
-// ログイン画面にも適用しています
-
+// ログインとユーザー編集にも適用しています
 $main_color: yellowgreen;
 $sub_color: #E4FF8D;
 
-.form-main-background {
-  height: calc(100vh - 80px);
-  width: 100vw;
+.form-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  min-height: calc(100vh - 100px - 100px);
   background-image: linear-gradient(180deg, $main_color 70%, $sub_color);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.form-main {
-  background-color: white;
+.form-wrap {
   width: 40%;
-  padding: 30px;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.form-header {
+  width: 50%;
+  height: 120px;
   text-align: center;
+  margin: 0 auto;
+  font-size: 22px;
 }
 
 .form-header-text {
-  font-family: 'Maven Pro';
-  font-size: 24px;
-  color: black;
+  line-height: 100px;
+  font-weight: bold;
   border-bottom: solid 1px $main_color;
-  padding: 0 0 0.8em 0;
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 1em;
 }
 
 .form-group {
-  margin-top: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .form-text-wrap {
@@ -42,6 +48,7 @@ $sub_color: #E4FF8D;
 }
 
 .form-text {
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -56,7 +63,8 @@ $sub_color: #E4FF8D;
   padding: 0.5em 0.4em;
   transition: all 0.4s;
   color: black;
-  margin: 0.7rem 0;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
   &:focus {
     background: $sub_color;
     transform: scale3d(1.02,1.02,1.02);
@@ -65,21 +73,26 @@ $sub_color: #E4FF8D;
 
 .indispensable {
   font-size: 12px;
+  font-weight: bold;
   background-color: red;
   color: white;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+.submit-btn {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .submit-btn-green {
   background: transparent;
-  width: 50%;
-  margin-top: 1em;
-  font-size: 1em;
+  width: 25%;
+  font-size: 14px;
+  font-weight: bold;
   border: solid 1px $main_color;
-  border-radius: 10px;
-  padding: 1em 0;
-  color: black;
+  border-radius: 5px;
+  padding: 10px;
   transition: all 0.6s;
   &:hover {
     cursor:pointer;
@@ -88,8 +101,8 @@ $sub_color: #E4FF8D;
 }
 
 .divider {
-  margin-top: 2em;
-  font-size: 0.8em;
+  margin-top: 20px;
+  text-align: center;
   position: relative;
   z-index: 1;
   &:before {
@@ -101,7 +114,7 @@ $sub_color: #E4FF8D;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 95%;
+    width: 80%;
     z-index: -1;
   }
   span {
@@ -111,27 +124,38 @@ $sub_color: #E4FF8D;
 }
 
 .divider-text {
+  font-size: 12px;
   color: grey;
 }
 
+.signup-link,
 .login-link {
-  margin-top: 1em;
+  background: transparent;
+  width: 25%;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 1px $main_color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  transition: all 0.6s;
+  &:hover {
+    cursor:pointer;
+    background: $sub_color;
+  }
   a {
     text-decoration: none;
   }
 }
 
-.login-btn {
-  padding: 10px;
-  border: $main_color;
-}
-
 @media (max-width: 550px) {
   form {
-  width: 90%;
-  margin-left: 3%;
-  padding-top: 5%;
-}
+    width: 90%;
+    margin-left: 3%;
+    padding-top: 5%;
+  }
   input {
     font-size: 1em;
   }
