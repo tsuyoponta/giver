@@ -1,0 +1,29 @@
+<%= render "shared/second_header" %>
+
+<%= form_with model: current_user, class: "form-main", local: true do |f|%>
+<div class="form-wrap">
+  <div class="form-header">
+    <h2 class="form-header-text">
+      アカウント編集
+    </h2>
+  </div>
+
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">ニックネーム</label>
+    </div>
+    <%= f.text_field :nickname, class:"input-default", autofocus: true, placeholder:"例）席ゆず郎" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">メールアドレス</label>
+    </div>
+    <%= f.email_field :email, class:"input-default", placeholder:"PC・携帯どちらでも可" %>
+  </div>
+  <div class="submit-btn">
+    <%= f.submit "アカウント更新", class:"submit-btn-green" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>

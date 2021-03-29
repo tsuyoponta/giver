@@ -14,6 +14,7 @@
 - has_many :messages
 
 ## user_rooms テーブル
+
 | Column | Type       | Options           |
 | ------ | ---------- | ----------------- |
 | user   | references | foreign_key: true |
@@ -25,6 +26,7 @@
 - belongs_to :room
 
 ## rooms テーブル
+
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | name   | string | null: false |
@@ -35,6 +37,7 @@
 - has_many :messages
 
 ## messages テーブル
+
 | Column   | Type       | Options           |
 | -------- | ---------- | ----------------- |
 | content  | string     | null: false       |

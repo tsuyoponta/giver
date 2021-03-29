@@ -4,14 +4,13 @@
   </div>
   <div class='nav'>
     <ul class='right-header'>
-      <%# ユーザーのログイン状態とログアウト状態で表示変更する %>
-      <% if false %>
-      <li><%= link_to "ユーザー名さん", "#", class: "user-nickname" %></li>
-      <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, edit_user_path(current_user), class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
-      <%# ユーザーのログイン状態とログアウト状態で表示変更する %>
-      <li><%= link_to 'ログイン', "#", class: "login" %></li>
-      <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
     </ul>
   </div>
 </header>
