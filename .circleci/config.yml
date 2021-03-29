@@ -11,7 +11,7 @@ jobs:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
       # bundlerのバージョンが2.0.1以上だと、bundle installに失敗するので、環境として指定
-          - BUNDLER_VERSION: 2.2.14
+          - BUNDLER_VERSION: 2.0.2
       # circleCIは仮想環境を構築するので、使用するデータベースを指定
           - RAILS_ENV: 'test'
       # Mysqlのバージョンを指定
@@ -41,7 +41,7 @@ jobs:
           name: install dependencies
           command: |
 # bundler2.0.1以降のものを使っているので、環境変数と合わせて指定
-            gem install bundler -v 2.2.14
+            gem install bundler -v 2.0.2
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
