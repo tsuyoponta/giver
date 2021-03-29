@@ -34,7 +34,6 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       # bundlerは2.0.1以降のものを使っているので、環境変数と合わせて指定
@@ -56,12 +55,12 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-# rubocopを走らせる記述
+      # rubocopを走らせる記述
       - run:
           name: Rubocop
           command: bundle exec rubocop
 
-# rspecを走らせる記述
+      # rspecを走らせる記述
       # run tests!
       - run:
           name: run tests
@@ -69,8 +68,7 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)"
-
-# RspecJunitFormatterというgemをインストールしていないとエラーになる
+              
             bundle exec rspec \
               --format progress \
               --format RspecJunitFormatter \
