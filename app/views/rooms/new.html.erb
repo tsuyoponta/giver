@@ -1,0 +1,28 @@
+<%= render "shared/second_header" %>
+
+<%= form_with model: @room, url: new_room_path, class: 'form-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      ルーム作成
+    </h1>
+  </div>
+
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ルーム名</label>
+    </div>
+    <%= f.text_field :name, class:"input-default", placeholder:"ルーム名を入力してください", autofocus: true %>
+  </div>
+  <div class='submit-btn'>
+  <%= f.submit "ルーム作成" ,class:"submit-btn-green" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>
