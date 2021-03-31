@@ -53,3 +53,6 @@ production:
   database: giver_production
   username: giver
   password: <%= ENV['GIVER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
