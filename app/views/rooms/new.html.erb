@@ -1,6 +1,6 @@
 <%= render "shared/second_header" %>
 
-<%= form_with model: @room, url: new_room_path, class: 'form-main', local: true do |f| %>
+<%= form_with model: @room, class: 'form-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -15,7 +15,7 @@
     <%= f.text_field :name, class:"input-default", placeholder:"ルーム名を入力してください", autofocus: true %>
   </div>
   <div class='submit-btn'>
-  <%= f.submit "ルーム作成" ,class:"submit-btn-green" %>
+    <%= f.submit "ルーム作成" , class:"submit-btn-green" %>
   </div>
 </div>
 <% end %>
