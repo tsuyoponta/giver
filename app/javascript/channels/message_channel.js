@@ -10,9 +10,27 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const nickName = `<P>${data.user.nickname}</P>`;
-    const createdAt = `<P>${data.content.created_at}</P>`;
-    const text = `<P>${data.content.content}</P>`;
+    const nickName = `
+      <div class="upper-message">
+        <div class="message-user">
+          <P>${data.user.nickname}</P>
+        </div>
+      </div>
+    `;
+    const createdAt = `
+      <div class="upper-message">
+        <div class="message-date">
+          <P>${data.content.created_at}</P>
+        </div>
+      </div>
+    `;
+    const text = `
+      <div class="lower-message">
+        <div class="message-content">
+          <P>${data.content.content}</P>
+        </div>
+      </div>
+    `;
     const messages = document.getElementById("messages");
     const newMessage = document.getElementById("message_content");
     messages.insertAdjacentHTML("beforeend", nickName);
