@@ -1,15 +1,34 @@
 <div class="side-bar-header">
   <div class="create-room">
-    <%= link_to "チャットルーム作成", new_room_path %>
+    <% if user_signed_in? %>
+      <%= link_to "チャットルーム作成", new_room_path %>
+    <% end %>
   </div>
 </div>
 
 <div class="rooms">
-  <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <a href="#"><%= room.name %></a>
+  <% if user_signed_in? %>
+    <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.name, room_messages_path(room) %>
+        </div>
       </div>
-    </div>
+    <% end %>
+    <% Room.where(id: UserRoom.where.not(user_id: current_user.id).pluck(:id)).each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.name, room_messages_path(room) %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <% Room.all.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.name, room_messages_path(room) %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

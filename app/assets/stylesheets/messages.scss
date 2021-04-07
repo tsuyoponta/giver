@@ -45,7 +45,7 @@ $sub_color: #E4FF8D;
 }
 
 .room {
-  padding: 20px 0 40px;
+  padding: 20px 0;
 }
 
 .room-name {
@@ -58,7 +58,7 @@ $sub_color: #E4FF8D;
 .chat {
   width: calc(100vw - 250px);
   height: 100vh;
-  background-color: gray;
+  background-color: whitesmoke;
 }
 
 .chat-header {
