@@ -8,9 +8,8 @@ class MessagesController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @message = @room.messages.new(message_params)
-    @user = User.find_by(id: current_user.id)
     if @message.save
-      ActionCable.server.broadcast "message_channel", content: @message, user: @user
+      ActionCable.server.broadcast "message_channel", content: @message.content, user: @message.user.nickname, time: @message.created_at.strftime("%Y/%m/%d %H:%M:%S")
     end
   end
 

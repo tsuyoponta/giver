@@ -12,17 +12,17 @@ consumer.subscriptions.create("MessageChannel", {
   received(data) {
     const nickName = `
       <div class="message-user">
-        ${data.user.nickname}
+        ${data.user}
       </div>
     `;
     const createdAt = `
       <div class="message-date">
-        ${data.content.created_at}
+        ${data.time}
       </div>
     `;
     const text = `
       <div class="message-content">
-        ${data.content.content}
+        ${data.content}
       </div>
     `;
     const upperMessage = `
