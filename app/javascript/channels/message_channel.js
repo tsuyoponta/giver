@@ -11,31 +11,34 @@ consumer.subscriptions.create("MessageChannel", {
 
   received(data) {
     const nickName = `
-      <div class="upper-message">
-        <div class="message-user">
-          <P>${data.user.nickname}</P>
-        </div>
+      <div class="message-user">
+        ${data.user.nickname}
       </div>
     `;
     const createdAt = `
-      <div class="upper-message">
-        <div class="message-date">
-          <P>${data.content.created_at}</P>
-        </div>
+      <div class="message-date">
+        ${data.content.created_at}
       </div>
     `;
     const text = `
+      <div class="message-content">
+        ${data.content.content}
+      </div>
+    `;
+    const upperMessage = `
+      <div class="upper-message">
+        ${nickName} ${createdAt}
+      </div>
+    `;
+    const lowerMessage = `
       <div class="lower-message">
-        <div class="message-content">
-          <P>${data.content.content}</P>
-        </div>
+        ${text}
       </div>
     `;
     const messages = document.getElementById("messages");
     const newMessage = document.getElementById("message_content");
-    messages.insertAdjacentHTML("beforeend", nickName);
-    messages.insertAdjacentHTML("beforeend", createdAt);
-    messages.insertAdjacentHTML("beforeend", text);
+    messages.insertAdjacentHTML("beforeend", upperMessage);
+    messages.insertAdjacentHTML("beforeend", lowerMessage);
     newMessage.value="";
   }
 });
