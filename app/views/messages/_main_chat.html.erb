@@ -4,7 +4,7 @@
   </div>
   <% if user_signed_in? %>
   <div class="room-exit">
-    ルーム退出
+    <%= link_to "ルーム退出", room_path(@room), method: :delete %>
   </div>
   <% end %>
 </div>
