@@ -3,3 +3,11 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+      room:
+        name: ルーム名
+      message:
+        content: メッセージ
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
