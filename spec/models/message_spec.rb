@@ -8,7 +8,6 @@ RSpec.describe Message, type: :model do
   describe "チャット機能" do
     context "メッセージが保存できる場合" do
       it "contentが存在すれば保存できる" do
-        binding.pry
         expect(@message).to be_valid
       end
     end
