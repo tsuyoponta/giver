@@ -1,39 +1,45 @@
 $main_color: yellowgreen;
 $sub_color: #E4FF8D;
+$ruled_line_color: #D3D3D3;
 
 .wrapper {
   display: flex;
+  border-top: 1px solid $ruled_line_color;
+  border-bottom: 1px solid $ruled_line_color;
 }
 
 .side-bar {
   width: 250px;
   height: 100vh;
   background-color: $main_color;
+  border-right: 1px solid $ruled_line_color;
 }
 
 .side-bar-header {
   height: 80px;
-  padding: 0 30px;
   background-color: $main_color;
+  border-bottom: 1px solid $ruled_line_color;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .create-room {
+  margin: 0 auto;
   a {
-    font-size: 15px;
-    padding: 14px;
-    border: none;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 1em;
     text-decoration: none;
-    color: #003399;
-    border-radius: 10px;
-    background-color: $sub_color;
-    transition-property: opacity;
-    transition-duration: .5s;
+    color: #FFF;
+    background: #fd9535;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #d27d00;
   }
-  &:hover {
-    opacity: .7;
+  &:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 }
 
@@ -64,6 +70,7 @@ $sub_color: #E4FF8D;
 .chat-header {
   height: 80px;
   background-color: $main_color;
+  border-bottom: 1px solid $ruled_line_color;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
@@ -81,18 +88,19 @@ $sub_color: #E4FF8D;
 
 .room-exit {
   a {
-    font-size: 15px;
-    padding: 14px;
-    border: none;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 1em;
     text-decoration: none;
     color: red;
-    border-radius: 10px;
-    background-color: white;
-    transition-property: opacity;
-    transition-duration: .5s;
+    background: #FFF;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #d27d00;
   }
-  &:hover {
-    opacity: .7;
+  &:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   }
 }
 
