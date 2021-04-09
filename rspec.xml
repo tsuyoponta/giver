@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="2" skipped="0" failures="0" errors="0" time="505.055036" timestamp="2021-04-09T10:17:29+00:00" hostname="a2957e4805d1">
+<properties>
+<property name="seed" value="10356"/>
+</properties>
+<testcase classname="spec.models.message_spec" name="Message チャット機能 メッセージが保存できる場合 contentが存在すれば保存できる" file="./spec/models/message_spec.rb" time="505.037755"></testcase>
+<testcase classname="spec.models.message_spec" name="Message チャット機能 メッセージが保存できない場合 contentが空では保存できない" file="./spec/models/message_spec.rb" time="0.013430"></testcase>
+</testsuite>

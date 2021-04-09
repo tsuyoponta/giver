@@ -7,8 +7,6 @@ ja:
         name: ルーム名
       message:
         content: メッセージ
-        user_id: ユーザー
-        room_id: ルーム
 
   time:
     formats:
