@@ -93,7 +93,7 @@ jobs:
       - run: 
           name: SSH 経由のデプロイ
           command: |
-            ssh $SSH_PORT $SSH_USER@$SSH_HOST "git pull origin master"
+            ssh $SSH_USER@$SSH_HOST "git pull origin master"
 
 workflows:
   version: 2
