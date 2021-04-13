@@ -82,3 +82,27 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - f4:c7:fd:6c:24:69:1f:fd:e3:c1:11:17:26:4f:14:92
+      - run: 
+          name: SSH 経由のデプロイ
+          command: |
+            ssh $SSH_PORT $SSH_USER@$SSH_HOST "git pull origin master"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
