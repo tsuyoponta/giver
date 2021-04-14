@@ -2,7 +2,8 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+version: 2.1
+
 jobs:
   build:
     docker:
@@ -90,10 +91,9 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - f4:c7:fd:6c:24:69:1f:fd:e3:c1:11:17:26:4f:14:92
-      - run: 
-          name: SSH 経由のデプロイ
+      - run:
           command: |
-            ssh $SSH_USER@$SSH_HOST "git pull origin master"
+            ssh $SSH_USER@$SSH_HOST "cd /var/www/giver && git pull origin master"
 
 workflows:
   version: 2
