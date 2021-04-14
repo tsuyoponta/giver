@@ -90,7 +90,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - f4:c7:fd:6c:24:69:1f:fd:e3:c1:11:17:26:4f:14:92
+            - a9:c1:51:e2:6f:6e:3f:42:f2:1e:87:31:57:c5:4e:28
       - run:
           command: |
             ssh $SSH_USER@$SSH_HOST "cd /home/ec2-user/giver && git pull origin master"
