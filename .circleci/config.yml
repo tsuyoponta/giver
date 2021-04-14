@@ -92,7 +92,7 @@ jobs:
           fingerprints:
             - a9:c1:51:e2:6f:6e:3f:42:f2:1e:87:31:57:c5:4e:28
       - run:
-          name: SSH via deploy
+          name: Deploy via SSH
           command: |
             ssh $SSH_USER@$SSH_HOST "cd /var/www/giver && git pull origin master"
 
