@@ -93,7 +93,7 @@ jobs:
             - f4:c7:fd:6c:24:69:1f:fd:e3:c1:11:17:26:4f:14:92
       - run:
           command: |
-            ssh $SSH_USER@$SSH_HOST "cd /var/www/giver && git pull origin master"
+            ssh ${SSH_USER}@${SSH_HOST} "cd ~/giver && git pull origin master"
 
 workflows:
   version: 2
