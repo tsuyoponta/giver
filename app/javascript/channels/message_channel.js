@@ -42,3 +42,4 @@ consumer.subscriptions.create("MessageChannel", {
     newMessage.value="";
   }
 });
+

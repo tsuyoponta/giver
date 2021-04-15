@@ -12,7 +12,7 @@ jobs:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
       # bundlerのバージョンが2.0.1以上だと、bundle installに失敗するので、環境として指定
-          - BUNDLER_VERSION: 2.2.14
+          - BUNDLER_VERSION: 2.2.15
       # circleCIは仮想環境を構築するので、使用するデータベースを指定
           - RAILS_ENV: 'test'
       # Mysqlのバージョンを指定
