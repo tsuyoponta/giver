@@ -41,7 +41,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            gem install bundler -v 2.2.14
+            gem install bundler -v 2.2.15
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
@@ -62,7 +62,6 @@ jobs:
           command: bundle exec rubocop
 
       # rspecを走らせる記述
-      # run tests!
       - run:
           name: run tests
           command: |
