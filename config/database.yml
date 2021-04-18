@@ -48,10 +48,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# 本番環境のmysql設定に合わせる
 production:
   <<: *default
   database: giver_production
-  # 本番環境のmysql設定に合わせる
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
